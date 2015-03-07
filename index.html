@@ -1,0 +1,175 @@
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="page-header">
+    <h1>Jquery Multi Select v 0.1</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <div class="span5">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <span class="glyphicon-class">glyphicon glyphicon-ok</span> Jquery 1.8+
+                    </div>
+                    <div class="panel-body">
+                        <span class="glyphicon-class">glyphicon glyphicon-ok</span> Mobile Compatible
+                    </div>
+                    <div class="panel-body">
+                        <span class="glyphicon-class">glyphicon glyphicon-ok</span> Open Source
+                    </div>
+                    <div class="panel-body">
+                        <span class="glyphicon-class">glyphicon glyphicon-ok</span> Customize with CSS
+                    </div>
+                </div>
+            </div>
+            <div class="span7">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Options</h3>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>type</th>
+                <th>default</th>
+                <th>description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>dataSource</td>
+                <td>Array</td>
+                <td>[]</td>
+                <td>Array with generate the select multiple</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>string</td>
+                <td>"ValueCombo"</td>
+                <td>Property of datasource with value</td>
+            </tr>
+            <tr>
+                <td>label</td>
+                <td>string</td>
+                <td>"TextCombo"</td>
+                <td>Property of datasource with shown text</td>
+            </tr>
+            <tr>
+                <td>afterInit</td>
+                <td>function</td>
+                <td>function(container){}</td>
+                <td>Function to call after the multiSelect initilization.</td>
+            </tr>
+            <tr>
+                <td>beforeSelect</td>
+                <td>function</td>
+                <td>function(data){}</td>
+                <td>Function to call before one item is selected. It return true or false, if false item not passed to selected</td>
+            </tr>
+            <tr>
+                <td>beforeSelectable</td>
+                <td>function</td>
+                <td>function(data){}</td>
+                <td>Function to call before one item is deselected. It return true or false, if false item not passed to deselected</td>
+            </tr>
+            <tr>
+                <td>afterSelect</td>
+                <td>function</td>
+                <td>function(values){}</td>
+                <td>Function to call after one item is selected.</td>
+            </tr>
+            <tr>
+                <td>afterSelectable</td>
+                <td>function</td>
+                <td>function(values){}</td>
+                <td>Function to call after one item is deselected.</td>
+            </tr>
+            <tr>
+                <td>disabledClass</td>
+                <td>String</td>
+                <td>'disabled'</td>
+                <td>CSS class for disabled items.</td>
+            </tr>
+            <tr>
+                <td>dblClick</td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>Replace the defautl click event to select items by the dblclick one.</td>
+            </tr>
+            <tr>
+                <td>cssClass</td>
+                <td>String</td>
+                <td>""</td>
+                <td>Add a custom CSS class to the multiselect container.</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>String</td>
+                <td>"auto"</td>
+                <td>Height of container, default is auto.</td>
+            </tr>
+            <tr>
+                <td>buttons</td>
+                <td>Array</td>
+                <td></td>
+                <td>The button for manage the list</td>
+            </tr>
+            <tr>
+                <td>buttonsSelected</td>
+                <td>Array</td>
+                <td></td>
+                <td>Button to manage selected item</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <h3>Methods</h3>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>type</th>
+                <th>default</th>
+                <th>description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>returnSelected</td>
+                <td>function</td>
+                <td>function(){}</td>
+                <td>Return the selected element (return datasource date), in order as appaear</td>
+            </tr>
+            <tr>
+                <td>returnSelectable</td>
+                <td>function</td>
+                <td>function() {}</td>
+                <td>Return the deselected element (return datasource date), in order as appaear</td>
+            </tr>
+            <tr>
+                <td>setDatasource</td>
+                <td>function</td>
+                <td>function(dataSource){}</td>
+                <td>Set the new datasource on the combo</td>
+            </tr>
+            <tr>
+                <td>setSelectedElement</td>
+                <td>function</td>
+                <td>function (element) {</td>
+                <td>Input datasource element that you want to select. (Take the 'value' of each element to select it)</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.select-multiple.js"></script>
+</body>
+</html>
