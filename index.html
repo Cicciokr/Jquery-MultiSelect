@@ -2,6 +2,7 @@
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jquery.select-multiple.css" rel="stylesheet">
+    <link href="css/monokai.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-header">
@@ -33,6 +34,27 @@
     </div>
     <div class="row">
         <h3>Options</h3>
+        <code data-language="javascript">
+            $.fn.selectMultiple.defaults = {
+                keySelect: [32],
+                disabledClass: 'disabled',
+                dblClick: true,
+                cssClass: '',
+                value: 'ValueCombo',
+                label: 'TextCombo',
+                dataSource: [],
+                clickEvent: 'click',
+                height: 'auto',
+                beforeSelect: function (data) {
+                    return true;
+                },
+                beforeSelectable: function (data) {
+                    return true;
+                },
+                buttons: [{ click: "_toSelected", text: ">", cssClass: "" }, { click: "_toSelectable", text: "<", cssClass: "" }, { click: "_allToSelected", text: ">>", cssClass: "" }, { click: "_allToSelectable", text: "<<", cssClass: ""}],
+                buttonsSelected: [{ click: "_toSelectedUp", text: " ", cssClass: "arrow-up" }, { click: "_toSelectedDown", text: " ", cssClass: "arrow-down"}]
+            };
+        </code>
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
@@ -168,9 +190,11 @@
             </tr>
             </tbody>
         </table>
+        <code data-language="javascript"></code>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/jquery.select-multiple.js"></script>
+<script src="js/rainbow-custom.min.js"></script>
 </body>
 </html>
