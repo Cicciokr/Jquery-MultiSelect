@@ -169,17 +169,20 @@
 		},
 
 		'escapeHTML': function (text) {
+			if(typeof text != 'undefined')
+			{
 			text = text.replace("<br />", " ");
 			text = text.replace("<BR />", " ");
 			text = text.replace("<BR>", " ");
 			text = text.replace("<BR/>", " ");
 			text = text.replace("&#8364;", "&euro;");
 			return text;
+			}
 		},
 		'activeButton': function ($containerBtn, buttons) {
 			var that = this;
 			$.each(buttons, function (i, item) {
-				var btn = $("<li class=\"k-button " + item.cssClass + "\">" + item.text + "</li>");
+				var btn = $("<li class=\"btn btn-default " + item.cssClass + "\">" + item.text + "</li>");
 				btn.on(that.options.clickEvent, function (e) {
 					that[item.click]();
 				});
@@ -424,7 +427,7 @@
 			var event = isTouchSupported ? "touchend" : "click";
 			option.clickEvent = event;
 
-			var options = $.extend({}, $.fn.multiSelect.defaults, $this.data(), typeof option === 'object' && option);
+			var options = $.extend({}, $.fn.selectMultiple.defaults, $this.data(), typeof option === 'object' && option);
 
 			if (!data) { $this.data('selectMultiple', (data = new SelectMultiple(this, options))); }
 
@@ -441,8 +444,8 @@
 		disabledClass: 'disabled',
 		dblClick: true,
 		cssClass: '',
-		value: 'ValueCombo',
-		label: 'TextCombo',
+		value: 'Value',
+		label: 'Text',
 		dataSource: [],
 		clickEvent: 'click',
 		height: 'auto',

@@ -1,39 +1,46 @@
 <html>
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jquery.select-multiple.css" rel="stylesheet">
     <link href="css/monokai.css" rel="stylesheet">
+				<style type="text/css">
+					body {
+						margin-bottom:50px;
+					}
+				</style>
 </head>
 <body>
 <div class="page-header">
     <h1>Jquery Multi Select v 0.1</h1>
+				Released under <a href="http://opensource.org/licenses/MIT">MIT</a> license
 </div>
 <div class="container">
     <div class="row">
         <div class="span12">
-            <div class="span5">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <span class="glyphicon glyphicon-ok"></span> Jquery 1.8+
-                    </div>
-                    <div class="panel-body">
-                        <span class="glyphicon glyphicon-ok"></span> Mobile Friendly
-                    </div>
-                    <div class="panel-body">
-                        <span class="glyphicon glyphicon-ok"></span> Open Source
-                    </div>
-                    <div class="panel-body">
-                        <span class="glyphicon glyphicon-ok"></span> Customize with CSS
+                        <div class="col-md-3">
+																									<span class="glyphicon glyphicon-ok"></span> Jquery 1.8+
+																								</div>
+																								<div class="col-md-3">
+																									<span class="glyphicon glyphicon-ok"></span> Mobile Friendly
+																								</div>
+																								<div class="col-md-3">
+																									<span class="glyphicon glyphicon-ok"></span> Simple to use
+																								</div>
+																								<div class="col-md-3">
+																									<span class="glyphicon glyphicon-ok"></span> Customize with CSS
+																								</div>
                     </div>
                 </div>
-            </div>
-            <div class="span7">
-
-            </div>
         </div>
+								<div class="span12">
+										<div id="selectionElement"></div>
+								</div>
     </div>
     <div class="row">
         <h3>Options</h3>
+								<pre>
         <code data-language="javascript">
             $.fn.selectMultiple.defaults = {
                 keySelect: [32],
@@ -51,10 +58,12 @@
                 beforeSelectable: function (data) {
                     return true;
                 },
-                buttons: [{ click: "_toSelected", text: ">", cssClass: "" }, { click: "_toSelectable", text: "<", cssClass: "" }, { click: "_allToSelected", text: ">>", cssClass: "" }, { click: "_allToSelectable", text: "<<", cssClass: ""}],
-                buttonsSelected: [{ click: "_toSelectedUp", text: " ", cssClass: "arrow-up" }, { click: "_toSelectedDown", text: " ", cssClass: "arrow-down"}]
+                buttons: [{ click: "_toSelected", text: ">", cssClass: "" },{ click: "_toSelectable", text: "<", cssClass: "" },{ click: "_allToSelected", text: ">>", cssClass: "" },{ click: "_allToSelectable", text: "<<", cssClass: ""}],
+                buttonsSelected: [{ click: "_toSelectedUp", text: " ", cssClass: "arrow-up" },{ click: "_toSelectedDown", text: " ", cssClass: "arrow-down"}]
             };
         </code>
+								</pre>
+								<div class="clearfix"></div>
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
@@ -190,11 +199,66 @@
             </tr>
             </tbody>
         </table>
-        <code data-language="javascript"></code>
+								
+					<h3>Use setDatasource with Start Trek Film</h3>
+     <pre>   
+						<code data-language="javascript">$("#selectionElement").data('selectMultiple').setDatasource([{Alias: "1", Text: "A new hope"},{Alias: "1", Text: "The empire strikes back"}, {Alias: "1", Text: "The return of the Jedi"}]);</code>
+					</pre>	
+					<h3>Use setSelectedElement to select some Start Trek Film</h3>		
+					<pre>
+						<code data-language="javascript">$("#selectionElement").data('selectMultiple').setSelectedElement([{Alias:"1"}]);</code>
+					</pre>
+					<h3>Return selected element</h3>
+					<pre>
+						<code data-language="javascript">$("#selectionElement").data('selectMultiple').returnSelected();</code>
+					</pre>
+					<pre>
+						<code data-language="html">Output: [{Alias: "1", Text: "A new hope"}]</code>
+					</pre>
     </div>
+				<div class="row">
+						<h3>Contribute</h3>
+						<div class="panel panel-default">
+       <div class="panel-body">
+								<i class="glyphicon glyphicon-random"></i> Fork on GitHub <a href="https://github.com/Cicciokr/Jquery-MultiSelect">https://github.com/Cicciokr/Jquery-MultiSelect</a><br />
+								<i class="glyphicon glyphicon-send"></i>Commit your change
+							</div>
+					</div>
+				</div>
+			<footer>
+			<div class="container">
+				<div class="col-md-4">
+				<iframe src="http://ghbtns.com/github-btn.html?user=Cicciokr&repo=Jquery-MultiSelect&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
+				</div>
+				<div class="col-md-4">
+				<iframe src="http://ghbtns.com/github-btn.html?user=Cicciokr&repo=Jquery-MultiSelect&type=fork&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
+				</div>
+				<div class="col-md-4">
+				<iframe src="http://ghbtns.com/github-btn.html?user=Cicciokr&type=follow&count=true&size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe>
+				</div>
+			</div>
+		</footer>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/jquery.select-multiple.js"></script>
 <script src="js/rainbow-custom.min.js"></script>
+<script type="text/javascript">
+$(document).on("ready", function() {
+					$("#selectionElement").selectMultiple(
+					{
+						dataSource: [{Alias: "1", Text: "A new hope"},{Alias: "1", Text: "The empire strikes back"}, {Alias: "1", Text: "The return of the Jedi"}],
+						value: 'Alias',
+						label: 'Text',
+						height: '200px',
+						disabledClass: 'disabled',
+						selectableHeader: "Star trek film",
+						selectionHeader: "Film selected",
+						afterSelect: function (data) {
+						},
+						afterSelectable: function (data) {
+						}
+					});
+});	
+</script>
 </body>
 </html>
