@@ -39,6 +39,27 @@
 								</div>
     </div>
     <div class="row">
+    	<h3>How to start</h3>
+    	<pre>
+    		<code data-language="javascript">
+    			$("#selectionElement").selectMultiple(
+					{
+						dataSource: [{Alias: "1", Text: "A new hope"},{Alias: "1", Text: "The empire strikes back"}, {Alias: "1", Text: "The return of the Jedi"}],
+						value: 'Alias',
+						label: 'Text',
+						height: '200px',
+						disabledClass: 'disabled',
+						selectableHeader: "Star trek film",
+						selectionHeader: "Film selected",
+						afterSelect: function (data) {
+						},
+						afterSelectable: function (data) {
+						}
+					});
+    		</code>
+    	</pre>
+    </div>
+    <div class="row">
         <h3>Options</h3>
 								<pre>
         <code data-language="javascript">
