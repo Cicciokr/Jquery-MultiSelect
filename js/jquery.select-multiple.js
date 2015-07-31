@@ -200,13 +200,13 @@
 
 		'refresh': function () {
 			this.destroy();
-			this.$element.multiSelect(this.options);
+			this.$element.selectMultiple(this.options);
 		},
 
 		'destroy': function () {
 			$("#ms-" + this.$element.attr("id")).remove();
 			this.$element.css('position', '').css('left', '')
-			this.$element.removeData('multiselect');
+			this.$element.removeData('selectMultiple');
 		},
 		'_toSelectable': function () {
 			//id = index-selected hide, index-selectable show
