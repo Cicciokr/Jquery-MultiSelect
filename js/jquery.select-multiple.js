@@ -132,26 +132,26 @@
 		},
 		'generateListFromDataSource': function (option, index, element) {
 			var that = this,
-          ms = that.$element,
-          attributes = "class=" + element[option.value] + " data-index=" + index,
-		  $option = element;
-
-			var selectableLi = $('<li ' + attributes + '><span>' + that.escapeHTML($option[option.label]) + '</span></li>'),
-          selectedLi = selectableLi.clone(),
-          value = $option[option.value];
-			var elementId = that.idUl + "-" + index;
-			//elementId = that.sanitize(value);
-
-			selectableLi
-        .data('ms-value', value)
-			//.addClass('ms-elem-selectable')
-        .attr('id', elementId + '-selectable');
-
-			selectedLi
-        .data('ms-value', value)
-			//.addClass('ms-elem-selection')
-        .attr('id', elementId + '-selection')
-        .hide();
+		          ms = that.$element,
+		          attributes = "class=\"no-selection "+ element[option.value] + "\" data-index=" + index,
+				  $option = element;
+		
+					var selectableLi = $('<li ' + attributes + '><span>' + that.escapeHTML($option[option.label]) + '</span></li>'),
+		          selectedLi = selectableLi.clone(),
+		          value = $option[option.value];
+					var elementId = that.idUl + "-" + index;
+					//elementId = that.sanitize(value);
+		
+					selectableLi
+		        .data('ms-value', value)
+					//.addClass('ms-elem-selectable')
+		        .attr('id', elementId + '-selectable');
+		
+					selectedLi
+		        .data('ms-value', value)
+					//.addClass('ms-elem-selection')
+		        .attr('id', elementId + '-selection')
+		        .hide();
 
 			if (('disabled' in $option && $option['disabled']) || ms.prop('disabled')) {
 				selectedLi.addClass(that.options.disabledClass);
